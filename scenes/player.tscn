@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxa2samq3vryr"]
+
+[ext_resource type="Texture2D" uid="uid://oah8huj10m5r" path="res://assets/tiles/colored/tile_0028.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://8xts3k32mqf" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(6, 6)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dqkch")
+
+[node name="Up" type="RayCast2D" parent="."]
+position = Vector2(0, -4)
+target_position = Vector2(0, -4)
+hit_from_inside = true
+
+[node name="Down" type="RayCast2D" parent="."]
+position = Vector2(0, 4)
+target_position = Vector2(0, 4)
+hit_from_inside = true
+
+[node name="Left" type="RayCast2D" parent="."]
+position = Vector2(-4, 0)
+target_position = Vector2(-4, 0)
+hit_from_inside = true
+
+[node name="Right" type="RayCast2D" parent="."]
+position = Vector2(4, 0)
+target_position = Vector2(4, 0)
+hit_from_inside = true
