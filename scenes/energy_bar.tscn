@@ -5,6 +5,6 @@
 [node name="EnergyBar" type="TextureProgressBar"]
 offset_right = 128.0
 offset_bottom = 8.0
-value = 20.0
+value = 50.0
 nine_patch_stretch = true
 texture_progress = ExtResource("1_2kkd2")

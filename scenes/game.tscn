@@ -312,7 +312,6 @@ offset_left = -64.0
 offset_top = 72.0
 offset_right = 64.0
 offset_bottom = 80.0
-value = 50.0
 script = ExtResource("4_p57ef")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -321,4 +320,4 @@ script = ExtResource("4_p57ef")
 position = Vector2(4, -4)
 
 [node name="Food" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(52, -4)
+position = Vector2(48, -8)
