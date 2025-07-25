@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq3mresm4tfoc"]
+
+[ext_resource type="Texture2D" uid="uid://ngwlyrfl6g4t" path="res://assets/tiles/colored/tile_0113.png" id="1_2kkd2"]
+
+[node name="EnergyBar" type="TextureProgressBar"]
+offset_right = 128.0
+offset_bottom = 8.0
+value = 20.0
+nine_patch_stretch = true
+texture_progress = ExtResource("1_2kkd2")

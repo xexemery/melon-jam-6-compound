@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var left: RayCast2D = $Left
 @onready var right: RayCast2D = $Right
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var energy_bar: TextureProgressBar = %EnergyBar
 
 
 const TILE_SIZE: Vector2 = Vector2(8, 8)
@@ -34,3 +35,5 @@ func _move(direction: Vector2):
 	sprite_node_pos_tween = create_tween()
 	sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	sprite_node_pos_tween.tween_property(sprite, "global_position", global_position, 0.185).set_trans(Tween.TRANS_SINE)
+
+	energy_bar.drain_energy()
