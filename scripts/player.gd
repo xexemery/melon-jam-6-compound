@@ -10,12 +10,12 @@ extends CharacterBody2D
 @onready var energy_bar: TextureProgressBar = %EnergyBar
 
 const TILE_SIZE: Vector2 = Vector2(8, 8)
-var sprite_node_pos_tween: Tween
+var sprite_tween: Tween
 var current_target: NPC
 
 
 func _physics_process(_delta: float) -> void:
-	if sprite_node_pos_tween and sprite_node_pos_tween.is_running():
+	if sprite_tween and sprite_tween.is_running():
 		return
 
 	# Handle movement
@@ -37,12 +37,12 @@ func _move(direction: Vector2) -> void:
 	global_position += direction * TILE_SIZE
 	sprite.global_position -= direction * TILE_SIZE
 
-	if sprite_node_pos_tween:
-		sprite_node_pos_tween.kill()
+	if sprite_tween:
+		sprite_tween.kill()
 
-	sprite_node_pos_tween = create_tween()
-	sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	sprite_node_pos_tween.tween_property(sprite, "global_position", global_position, 0.2).set_trans(Tween.TRANS_SINE)
+	sprite_tween = create_tween()
+	sprite_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	sprite_tween.tween_property(sprite, "global_position", global_position, 0.2).set_trans(Tween.TRANS_SINE)
 
 	energy_bar.drain_energy()
 
