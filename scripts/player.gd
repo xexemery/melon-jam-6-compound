@@ -5,18 +5,13 @@ extends CharacterBody2D
 @onready var down: RayCast2D = $Down
 @onready var left: RayCast2D = $Left
 @onready var right: RayCast2D = $Right
+@onready var area: Area2D = $Area2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var energy_bar: TextureProgressBar = %EnergyBar
 
-var ray_casts: Array[RayCast2D]
-
 const TILE_SIZE: Vector2 = Vector2(8, 8)
 var sprite_node_pos_tween: Tween
-
-
-func _ready() -> void:
-	ray_casts = [up, down, left, right]
-	print(ray_casts)
+var current_target: NPC
 
 
 func _physics_process(_delta: float) -> void:
@@ -34,11 +29,8 @@ func _physics_process(_delta: float) -> void:
 		_move(Vector2(1, 0))
 
 	# Handle interactions
-	if Input.is_action_just_pressed("interact"):
-		var colliding_index: int = ray_casts.find_custom(_check_collider_is_NPC)
-		if colliding_index >= 0:
-			var collider: NPC = ray_casts[colliding_index].get_collider()
-			collider.interact()
+	if Input.is_action_just_pressed("interact") and current_target is NPC:
+		current_target.interact()
 
 
 func _move(direction: Vector2) -> void:
@@ -50,10 +42,18 @@ func _move(direction: Vector2) -> void:
 
 	sprite_node_pos_tween = create_tween()
 	sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
-	sprite_node_pos_tween.tween_property(sprite, "global_position", global_position, 0.185).set_trans(Tween.TRANS_SINE)
+	sprite_node_pos_tween.tween_property(sprite, "global_position", global_position, 0.2).set_trans(Tween.TRANS_SINE)
 
 	energy_bar.drain_energy()
 
 
-func _check_collider_is_NPC(ray_cast: RayCast2D) -> bool:
-	return ray_cast.is_colliding() and ray_cast.get_collider() is NPC
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is FriendlyNPC:
+		body.get_node("SpeechBubble").visible = true
+		current_target = body
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body is FriendlyNPC:
+		body.get_node("SpeechBubble").visible = false
+		current_target = null
