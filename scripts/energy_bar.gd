@@ -1,9 +1,13 @@
 extends TextureProgressBar
 
 
-func _process(_delta: float) -> void:
-	if value == 0:
-		print("you died") # also do something to stop infinitely doing this
+func _ready() -> void:
+	value_changed.connect(_check_energy)
+
+
+func _check_energy(energy) -> void:
+	if energy == 0:
+		print("you died")
 
 
 func drain_energy() -> void:

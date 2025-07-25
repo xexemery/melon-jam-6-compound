@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cdqwq88rmqj4t"]
+[gd_scene load_steps=11 format=4 uid="uid://cdqwq88rmqj4t"]
 
 [ext_resource type="Script" uid="uid://ii3a6tl1lnao" path="res://scripts/game_manager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cxa2samq3vryr" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bq3mresm4tfoc" path="res://scenes/energy_bar.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dpd8ptifdequ4" path="res://scenes/food.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://1wwnrlvyqmwl" path="res://scripts/energy_bar.gd" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bj6828ugisn5o" path="res://scenes/friendly/crab.tscn" id="7_u5sy4"]
+[ext_resource type="Script" uid="uid://8wna7xbo572j" path="res://scripts/crab.gd" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -321,3 +323,7 @@ position = Vector2(4, -4)
 
 [node name="Food" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(48, -8)
+
+[node name="Crab" parent="." instance=ExtResource("7_u5sy4")]
+position = Vector2(28, -20)
+script = ExtResource("8_gee14")
