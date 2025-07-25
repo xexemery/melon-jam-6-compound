@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbfmm8ol6apld"]
+
+[ext_resource type="Texture2D" uid="uid://dhsjka4v0wprj" path="res://assets/tiles/colored/tile_0027.png" id="1_enbs0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc36x"]
+size = Vector2(8, 8)
+
+[node name="Octopus" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_enbs0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yc36x")
