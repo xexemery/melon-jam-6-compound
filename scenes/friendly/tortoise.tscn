@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bor7prnh5fwbk"]
+[gd_scene load_steps=5 format=3 uid="uid://bor7prnh5fwbk"]
 
 [ext_resource type="Texture2D" uid="uid://dkmju8l1qpo7r" path="res://assets/tiles/colored/tile_0026.png" id="1_37jdl"]
+[ext_resource type="Script" uid="uid://chwspefeudjig" path="res://scripts/friendly/tortoise.gd" id="1_dk6kc"]
 [ext_resource type="Texture2D" uid="uid://c63w6ps6b0bm" path="res://assets/tiles/colored/tile_0063.png" id="2_ohk4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc36x"]
 size = Vector2(8, 8)
 
 [node name="Tortoise" type="CharacterBody2D"]
+script = ExtResource("1_dk6kc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_37jdl")

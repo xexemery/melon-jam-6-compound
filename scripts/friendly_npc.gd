@@ -5,6 +5,16 @@ extends NPC
 @onready var game_manager: Node = %GameManager
 @onready var text_box: CanvasLayer = %TextBox
 
+enum Type {
+	CRAB,
+	DOG,
+	OCTOPUS,
+	RAT,
+	SLIME,
+	SNAKE,
+	TORTOISE
+}
+
 
 func _ready() -> void:
 	text_box.option_selected.connect(_on_option_selected)

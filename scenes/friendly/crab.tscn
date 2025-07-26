@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj6828ugisn5o"]
+[gd_scene load_steps=5 format=3 uid="uid://bj6828ugisn5o"]
 
+[ext_resource type="Script" uid="uid://8wna7xbo572j" path="res://scripts/friendly/crab.gd" id="1_8awyk"]
 [ext_resource type="Texture2D" uid="uid://biayo0lqhevvh" path="res://assets/tiles/colored/tile_0012.png" id="1_ow7wl"]
 [ext_resource type="Texture2D" uid="uid://c63w6ps6b0bm" path="res://assets/tiles/colored/tile_0063.png" id="2_lhgpq"]
 
@@ -7,6 +8,7 @@
 size = Vector2(8, 8)
 
 [node name="Crab" type="CharacterBody2D"]
+script = ExtResource("1_8awyk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ow7wl")

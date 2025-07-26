@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://daiyumal65tv3"]
 
-[ext_resource type="Script" uid="uid://bcmcu0ng6c6fs" path="res://scripts/text_box.gd" id="1_dyarx"]
+[ext_resource type="Script" uid="uid://bcmcu0ng6c6fs" path="res://scripts/ui/text_box.gd" id="1_dyarx"]
 [ext_resource type="FontFile" uid="uid://dg5d5bxmulnrh" path="res://assets/fonts/Kenney Mini.ttf" id="1_wscpg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyarx"]
