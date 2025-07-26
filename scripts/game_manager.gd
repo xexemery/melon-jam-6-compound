@@ -41,10 +41,13 @@ func remove_from_party(index: int) -> void:
 	party_stats.display_stats()
 	party_list.remove_party_member(index)
 
+	# maybe update this to say something different if it happens via enemy attack
 	text_box.queue_text(member_to_remove.get_type() + " was consumed.")
 	party_size_changed.emit(len(party))
 
 
 func game_over() -> void:
+	# update to check if starved or defeated
+	# also exit out of combat menu if needed
 	text_box.queue_text("You starved...")
 	text_box.queue_options("Try again", "Quit")

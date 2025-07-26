@@ -122,6 +122,7 @@ func _handle_befriend() -> void:
 	if game_manager.party_friend > friend_threshold:
 		text_box.queue_text("You become friends!")
 		text_box.queue_text("They let you pass.")
+		# wait for text to finish first
 		player.move_past(global_position)
 	else:
 		text_box.queue_text("They don't want to be friends.")
