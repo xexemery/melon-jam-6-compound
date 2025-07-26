@@ -15,6 +15,7 @@ enum Type {
 	TORTOISE
 }
 
+var type: int
 var attack: int = 0
 var defend: int = 0
 var sneak: int = 0

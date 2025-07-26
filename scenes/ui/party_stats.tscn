@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqp6lrfhlgfne"]
+
+[ext_resource type="FontFile" uid="uid://dg5d5bxmulnrh" path="res://assets/fonts/Kenney Mini.ttf" id="1_mh6pj"]
+
+[node name="PartyStats" type="VBoxContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 80.0
+grow_horizontal = 0
+theme_override_constants/separation = 0
+
+[node name="AttackLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mh6pj")
+theme_override_font_sizes/font_size = 8
+text = "Attack:"
+
+[node name="AttackValue" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_mh6pj")
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="DefendLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mh6pj")
+theme_override_font_sizes/font_size = 8
+text = "Defend:"
+
+[node name="DefendValue" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_mh6pj")
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="SneakLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mh6pj")
+theme_override_font_sizes/font_size = 8
+text = "Sneak:"
+
+[node name="SneakValue" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_mh6pj")
+theme_override_font_sizes/font_size = 8
+text = "1"
+
+[node name="FriendLabel" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mh6pj")
+theme_override_font_sizes/font_size = 8
+text = "Friend:"
+
+[node name="FriendValue" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_mh6pj")
+theme_override_font_sizes/font_size = 8
+text = "1"
