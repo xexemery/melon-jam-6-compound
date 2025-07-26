@@ -16,7 +16,7 @@ enum Type {
 	TORTOISE
 }
 
-var type: int
+var type: Type
 var attack: int = 0
 var defend: int = 0
 var sneak: int = 0
@@ -27,14 +27,34 @@ func _ready() -> void:
 	text_box.option_selected.connect(_on_option_selected)
 
 
+func get_type() -> String:
+	match type:
+		Type.CRAB:
+			return "Crab"
+		Type.DOG:
+			return "Dog"
+		Type.OCTOPUS:
+			return "Octopus"
+		Type.RAT:
+			return "Rat"
+		Type.SLIME:
+			return "Slime"
+		Type.SNAKE:
+			return "Snake"
+		Type.TORTOISE:
+			return "Tortoise"
+		_:
+			return "FriendlyNPC"
+
+
 func interact() -> void:
 	text_box.queue_text(_display_stats())
-	text_box.queue_text("Add to party?")
+	text_box.queue_text("Absorb this creature?")
 	text_box.queue_options("Yes", "No")
 
 
 func _display_stats() -> String:
-	var stats: String = ""
+	var stats: String = get_type() + "\n"
 
 	if attack:
 		stats += "Attack: " + _display_value(attack) + " "

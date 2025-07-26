@@ -3,6 +3,7 @@ extends Node
 
 @onready var party_stats: VBoxContainer = %PartyStats
 @onready var party_list: GridContainer = %PartyList
+@onready var text_box: CanvasLayer = %TextBox
 
 var party: Array[FriendlyNPC] = []
 var party_attack: int = 1
@@ -26,7 +27,6 @@ func add_to_party(member: FriendlyNPC) -> void:
 	party_stats.display_stats()
 	party_list.add_party_member(member.type)
 
-	print(party)
 	party_size_changed.emit(len(party))
 
 
@@ -41,5 +41,5 @@ func remove_from_party(index: int) -> void:
 	party_stats.display_stats()
 	party_list.remove_party_member(index)
 
-	print(party)
+	text_box.queue_text(member_to_remove.get_type() + " was consumed.")
 	party_size_changed.emit(len(party))
