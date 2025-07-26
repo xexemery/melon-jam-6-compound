@@ -21,5 +21,5 @@ func add_to_party(member: FriendlyNPC) -> void:
 	party_sneak += member.sneak
 	party_friend += member.friend
 
-	party_stats.update_stats(party_attack, party_defend, party_sneak, party_friend)
+	party_stats.display_stats()
 	party_size_changed.emit(len(party))
