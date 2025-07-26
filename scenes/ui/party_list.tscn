@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtj2eb4jmfxto"]
+
+[ext_resource type="Texture2D" uid="uid://biayo0lqhevvh" path="res://assets/tiles/colored/tile_0012.png" id="1_sy4ig"]
+[ext_resource type="Texture2D" uid="uid://28ld0bcoddfu" path="res://assets/tiles/colored/tile_0021.png" id="2_ny3vr"]
+[ext_resource type="Texture2D" uid="uid://dhsjka4v0wprj" path="res://assets/tiles/colored/tile_0027.png" id="3_j020x"]
+[ext_resource type="Texture2D" uid="uid://y1yq858y7akb" path="res://assets/tiles/colored/tile_0022.png" id="4_jfsfr"]
+[ext_resource type="Texture2D" uid="uid://jlcb32g7ibsc" path="res://assets/tiles/colored/tile_0024.png" id="5_0u1cw"]
+[ext_resource type="Texture2D" uid="uid://b1b7tgndh7vvk" path="res://assets/tiles/colored/tile_0020.png" id="6_50uvr"]
+[ext_resource type="Texture2D" uid="uid://dkmju8l1qpo7r" path="res://assets/tiles/colored/tile_0026.png" id="7_8e74j"]
+
+[node name="PartyList" type="GridContainer"]
+offset_right = 32.0
+offset_bottom = 72.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="Crab" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_sy4ig")
+
+[node name="Dog" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_ny3vr")
+
+[node name="Octopus" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_j020x")
+
+[node name="Rat" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_jfsfr")
+
+[node name="Slime" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("5_0u1cw")
+
+[node name="Snake" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_50uvr")
+
+[node name="Tortoise" type="TextureRect" parent="."]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_8e74j")

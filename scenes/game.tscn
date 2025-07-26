@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cdqwq88rmqj4t"]
+[gd_scene load_steps=16 format=4 uid="uid://cdqwq88rmqj4t"]
 
 [ext_resource type="Script" uid="uid://ii3a6tl1lnao" path="res://scripts/game_manager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cxa2samq3vryr" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://daiyumal65tv3" path="res://scenes/ui/text_box.tscn" id="6_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cqp6lrfhlgfne" path="res://scenes/ui/party_stats.tscn" id="6_vtaks"]
 [ext_resource type="PackedScene" uid="uid://bj6828ugisn5o" path="res://scenes/friendly/crab.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dtj2eb4jmfxto" path="res://scenes/ui/party_list.tscn" id="8_dinhu"]
+[ext_resource type="Script" uid="uid://cf773htnddl3k" path="res://scripts/ui/party_list.gd" id="9_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -325,11 +327,19 @@ script = ExtResource("4_p57ef")
 
 [node name="PartyStats" parent="SidePanels" instance=ExtResource("6_vtaks")]
 unique_name_in_owner = true
-offset_left = -312.0
+offset_left = 8.0
 offset_top = 8.0
-offset_right = -280.0
-offset_bottom = 88.0
+offset_right = 40.0
+offset_bottom = -92.0
 script = ExtResource("5_kvpfn")
+
+[node name="PartyList" parent="SidePanels" instance=ExtResource("8_dinhu")]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 96.0
+offset_right = 40.0
+offset_bottom = -12.0
+script = ExtResource("9_kvuet")
 
 [node name="TextBox" parent="." instance=ExtResource("6_0tnpc")]
 unique_name_in_owner = true
