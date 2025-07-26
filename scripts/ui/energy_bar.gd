@@ -27,8 +27,7 @@ func _check_energy(energy) -> void:
 		return
 
 	if party_size == 0:
-		text_box.queue_text("You starved...")
-		text_box.queue_options("Try again", "Quit")
+		game_manager.game_over()
 	else:
 		_eat_party_member()
 

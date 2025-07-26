@@ -53,6 +53,10 @@ func _move(direction: Vector2) -> void:
 	energy_bar.drain_energy()
 
 
+func move_past(object_position: Vector2) -> void:
+	global_position += 2 * (object_position - global_position)
+
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is FriendlyNPC:
 		body.get_node("SpeechBubble").show()

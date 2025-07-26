@@ -92,10 +92,14 @@ func _handle_defend() -> void:
 	if game_manager.party_defend > attack:
 		text_box.queue_text("You defend against the enemy's attack.")
 		text_box.queue_text("They let you pass.")
-		# move player past enemy
+		player.move_past(global_position)
 	else:
 		text_box.queue_text("You aren't strong enough.")
-		# remove random party member
+		if len(game_manager.party) == 0:
+			game_manager.game_over()
+		else:
+			var index_to_remove: int = randi_range(0, len(game_manager.party))
+			game_manager.remove_from_party(index_to_remove)
 
 
 func _handle_sneak() -> void:
@@ -105,7 +109,7 @@ func _handle_sneak() -> void:
 
 	if game_manager.party_sneak > sneak_threshold:
 		text_box.queue_text("You sneak past.")
-		# move player past enemy
+		player.move_past(global_position)
 	else:
 		text_box.queue_text("You couldn't sneak past.")
 
@@ -118,6 +122,6 @@ func _handle_befriend() -> void:
 	if game_manager.party_friend > friend_threshold:
 		text_box.queue_text("You become friends!")
 		text_box.queue_text("They let you pass.")
-		# move player past enemy or move enemy out the way
+		player.move_past(global_position)
 	else:
 		text_box.queue_text("They don't want to be friends.")

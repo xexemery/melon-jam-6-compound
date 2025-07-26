@@ -43,3 +43,8 @@ func remove_from_party(index: int) -> void:
 
 	text_box.queue_text(member_to_remove.get_type() + " was consumed.")
 	party_size_changed.emit(len(party))
+
+
+func game_over() -> void:
+	text_box.queue_text("You starved...")
+	text_box.queue_options("Try again", "Quit")
