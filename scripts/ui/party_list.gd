@@ -11,6 +11,7 @@ extends GridContainer
 
 var members: Array[TextureRect] = []
 var new_member: TextureRect
+var member_to_remove: TextureRect
 
 
 func add_party_member(type: int) -> void:
@@ -33,3 +34,8 @@ func add_party_member(type: int) -> void:
 	new_member.show()
 	add_child(new_member)
 	members.push_back(new_member)
+
+
+func remove_party_member(index: int) -> void:
+	member_to_remove = members.pop_at(index)
+	remove_child(member_to_remove)

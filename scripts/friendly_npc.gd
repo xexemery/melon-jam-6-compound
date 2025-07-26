@@ -60,4 +60,4 @@ func _display_value(stat: int) -> String:
 func _on_option_selected(selection: int) -> void:
 	if selection == 0:
 		game_manager.add_to_party(self)
-		queue_free()
+		get_parent().remove_child(self)
