@@ -1,14 +1,12 @@
 extends Node
 
 
-@onready var energy_bar: TextureProgressBar = %EnergyBar
+var party: Array = []
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+signal party_size_changed(length: int)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+func add_to_party(friend: FriendlyNPC) -> void:
+	party.push_back(friend)
+	party_size_changed.emit(len(party))

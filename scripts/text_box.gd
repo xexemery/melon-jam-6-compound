@@ -34,8 +34,6 @@ signal option_selected(selection: int)
 func _ready() -> void:
 	_hide_text_box()
 	_hide_options_box()
-	queue_text("Add to party?")
-	queue_options("Yes", "No")
 
 
 func _process(_delta: float) -> void:
@@ -104,7 +102,8 @@ func _show_text_box() -> void:
 
 
 func _show_options_box() -> void:
-	_set_current_selection(0)
+	current_selection = 0
+	_set_current_selection(current_selection)
 	text_box_container.show()
 
 
