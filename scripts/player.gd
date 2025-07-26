@@ -8,10 +8,16 @@ extends CharacterBody2D
 @onready var area: Area2D = $Area2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var energy_bar: TextureProgressBar = %EnergyBar
+@onready var text_box: CanvasLayer = %TextBox
 
 const TILE_SIZE: Vector2 = Vector2(8, 8)
 var sprite_tween: Tween
 var current_target: NPC
+
+
+func _ready() -> void:
+	await get_tree().create_timer(0.5).timeout
+	text_box.queue_text("Hungry...")
 
 
 func _physics_process(_delta: float) -> void:

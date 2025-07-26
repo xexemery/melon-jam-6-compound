@@ -2,6 +2,7 @@ extends TextureProgressBar
 
 
 @onready var game_manager: Node = %GameManager
+@onready var text_box: CanvasLayer = %TextBox
 
 const DRAIN_RATE: int = 1
 var party_size: int = 0
@@ -26,7 +27,8 @@ func _check_energy(energy) -> void:
 		return
 
 	if party_size == 0:
-		print("you died")
+		text_box.queue_text("You starved...")
+		text_box.queue_options("Try again", "Quit")
 	else:
 		_eat_party_member()
 

@@ -14,6 +14,10 @@ enum CombatStage {
 }
 
 var combat_stage: CombatStage = CombatStage.READY
+var attack: int
+var defend: int
+var sneak_threshold: int
+var friend_threshold: int
 
 
 func _ready() -> void:
@@ -69,16 +73,51 @@ func _change_combat_stage(next_stage) -> void:
 
 
 func _handle_attack() -> void:
-	pass
+	if defend < 0:
+		text_box.queue_text("You missed.")
+		return
+
+	if game_manager.party_attack > defend:
+		text_box.queue_text("You defeated the enemy.")
+		queue_free()
+	else:
+		text_box.queue_text("You aren't strong enough.")
 
 
 func _handle_defend() -> void:
-	pass
+	if attack < 0:
+		text_box.queue_text("They won't attack you.")
+		return
+
+	if game_manager.party_defend > attack:
+		text_box.queue_text("You defend against the enemy's attack.")
+		text_box.queue_text("They let you pass.")
+		# move player past enemy
+	else:
+		text_box.queue_text("You aren't strong enough.")
+		# remove random party member
 
 
 func _handle_sneak() -> void:
-	pass
+	if sneak_threshold < 0:
+		text_box.queue_text("You can't sneak past them.")
+		return
+
+	if game_manager.party_sneak > sneak_threshold:
+		text_box.queue_text("You sneak past.")
+		# move player past enemy
+	else:
+		text_box.queue_text("You couldn't sneak past.")
 
 
 func _handle_befriend() -> void:
-	pass
+	if friend_threshold < 0:
+		text_box.queue_text("You can't befriend this enemy.")
+		return
+
+	if game_manager.party_friend > friend_threshold:
+		text_box.queue_text("You become friends!")
+		text_box.queue_text("They let you pass.")
+		# move player past enemy or move enemy out the way
+	else:
+		text_box.queue_text("They don't want to be friends.")
