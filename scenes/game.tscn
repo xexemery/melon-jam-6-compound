@@ -314,6 +314,15 @@ tile_set = SubResource("TileSet_lbhrr")
 [node name="SidePanels" parent="." instance=ExtResource("5_vtaks")]
 layer = 10
 
+[node name="EnergyBar" parent="SidePanels" instance=ExtResource("3_lnu2h")]
+unique_name_in_owner = true
+offset_left = 48.0
+offset_top = 168.0
+offset_right = 208.0
+offset_bottom = 176.0
+rotation = -1.57079
+script = ExtResource("4_p57ef")
+
 [node name="PartyStats" parent="SidePanels" instance=ExtResource("6_vtaks")]
 unique_name_in_owner = true
 offset_left = -312.0
@@ -321,15 +330,6 @@ offset_top = 8.0
 offset_right = -280.0
 offset_bottom = 88.0
 script = ExtResource("5_kvpfn")
-
-[node name="EnergyBar" parent="SidePanels" instance=ExtResource("3_lnu2h")]
-unique_name_in_owner = true
-offset_left = 296.0
-offset_top = 168.0
-offset_right = 456.0
-offset_bottom = 176.0
-rotation = -1.57079
-script = ExtResource("4_p57ef")
 
 [node name="TextBox" parent="." instance=ExtResource("6_0tnpc")]
 unique_name_in_owner = true
