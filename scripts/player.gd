@@ -49,11 +49,11 @@ func _move(direction: Vector2) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is FriendlyNPC:
-		body.get_node("SpeechBubble").visible = true
+		body.get_node("SpeechBubble").show()
 		current_target = body
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is FriendlyNPC:
-		body.get_node("SpeechBubble").visible = false
+		body.get_node("SpeechBubble").hide()
 		current_target = null

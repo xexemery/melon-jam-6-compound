@@ -12,6 +12,8 @@ border_width_bottom = 1
 border_color = Color(1, 1, 1, 1)
 
 [node name="TextBox" type="CanvasLayer"]
+process_mode = 3
+follow_viewport_enabled = true
 script = ExtResource("1_dyarx")
 
 [node name="TextBoxContainer" type="MarginContainer" parent="."]
@@ -39,10 +41,10 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextBoxContainer/MarginContainer"]
+[node name="TextContainer" type="HBoxContainer" parent="TextBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Start" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Start" type="Label" parent="TextBoxContainer/MarginContainer/TextContainer"]
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -50,7 +52,7 @@ theme_override_fonts/font = ExtResource("1_wscpg")
 theme_override_font_sizes/font_size = 8
 text = ">"
 
-[node name="Label" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="TextBoxContainer/MarginContainer/TextContainer"]
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -61,10 +63,49 @@ text = "Text placeholder! The quick brown fox jumped over the lazy dog? hdhddd"
 autowrap_mode = 2
 clip_text = true
 
-[node name="End" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
+[node name="End" type="Label" parent="TextBoxContainer/MarginContainer/TextContainer"]
 custom_minimum_size = Vector2(6, 0)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("1_wscpg")
 theme_override_font_sizes/font_size = 8
 text = "..."
+
+[node name="MenuContainer" type="HBoxContainer" parent="TextBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Selector1" type="Label" parent="TextBoxContainer/MarginContainer/MenuContainer"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_wscpg")
+theme_override_font_sizes/font_size = 8
+text = ">"
+
+[node name="Label1" type="Label" parent="TextBoxContainer/MarginContainer/MenuContainer"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_wscpg")
+theme_override_font_sizes/font_size = 8
+text = "Yes"
+uppercase = true
+
+[node name="Selector2" type="Label" parent="TextBoxContainer/MarginContainer/MenuContainer"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_wscpg")
+theme_override_font_sizes/font_size = 8
+text = ">"
+
+[node name="Label2" type="Label" parent="TextBoxContainer/MarginContainer/MenuContainer"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_wscpg")
+theme_override_font_sizes/font_size = 8
+text = "No"
+uppercase = true
