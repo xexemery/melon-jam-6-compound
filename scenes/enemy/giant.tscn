@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr81blgm6dwfo"]
+[gd_scene load_steps=5 format=3 uid="uid://dr81blgm6dwfo"]
 
 [ext_resource type="Texture2D" uid="uid://8ke87ujam0qu" path="res://assets/tiles/colored/tile_0014.png" id="1_5x4qu"]
+[ext_resource type="Script" uid="uid://2aw3yw1myjc2" path="res://scripts/enemy/giant.gd" id="1_nrt6x"]
+[ext_resource type="Texture2D" uid="uid://c6pe4580qmtm6" path="res://assets/tiles/colored/tile_0070.png" id="2_o8bld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc36x"]
 size = Vector2(8, 8)
 
 [node name="Giant" type="CharacterBody2D"]
+script = ExtResource("1_nrt6x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5x4qu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yc36x")
+
+[node name="AttackSymbol" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+texture = ExtResource("2_o8bld")

@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4mfkvsbiej8d"]
+[gd_scene load_steps=5 format=3 uid="uid://d4mfkvsbiej8d"]
 
 [ext_resource type="Texture2D" uid="uid://b07hs6113bn5f" path="res://assets/tiles/colored/tile_0004.png" id="1_ejea1"]
+[ext_resource type="Script" uid="uid://dbgita5bdbjhx" path="res://scripts/enemy/man_1.gd" id="1_iqchw"]
+[ext_resource type="Texture2D" uid="uid://c6pe4580qmtm6" path="res://assets/tiles/colored/tile_0070.png" id="2_paecm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc36x"]
 size = Vector2(8, 8)
 
 [node name="Man1" type="CharacterBody2D"]
+script = ExtResource("1_iqchw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ejea1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yc36x")
+
+[node name="AttackSymbol" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -8)
+texture = ExtResource("2_paecm")

@@ -3,7 +3,7 @@ extends TextureProgressBar
 
 @onready var game_manager: Node = %GameManager
 
-const DRAIN_RATE: int = 2
+const DRAIN_RATE: int = 1
 var party_size: int = 0
 var index_to_remove: int
 

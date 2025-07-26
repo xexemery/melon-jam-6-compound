@@ -51,9 +51,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is FriendlyNPC:
 		body.get_node("SpeechBubble").show()
 		current_target = body
+	elif body is EnemyNPC:
+		body.get_node("AttackSymbol").show()
+		current_target = body
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body is FriendlyNPC:
 		body.get_node("SpeechBubble").hide()
+		current_target = null
+	elif body is EnemyNPC:
+		body.get_node("AttackSymbol").hide()
 		current_target = null

@@ -26,6 +26,7 @@ func add_to_party(member: FriendlyNPC) -> void:
 	party_stats.display_stats()
 	party_list.add_party_member(member.type)
 
+	print(party)
 	party_size_changed.emit(len(party))
 
 
@@ -40,4 +41,5 @@ func remove_from_party(index: int) -> void:
 	party_stats.display_stats()
 	party_list.remove_party_member(index)
 
+	print(party)
 	party_size_changed.emit(len(party))

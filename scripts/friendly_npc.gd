@@ -4,6 +4,7 @@ extends NPC
 
 @onready var game_manager: Node = %GameManager
 @onready var text_box: CanvasLayer = %TextBox
+@onready var player: CharacterBody2D = %Player
 
 enum Type {
 	CRAB,
@@ -58,6 +59,6 @@ func _display_value(stat: int) -> String:
 
 
 func _on_option_selected(selection: int) -> void:
-	if selection == 0:
+	if selection == 0 and player.current_target == self:
 		game_manager.add_to_party(self)
 		get_parent().remove_child(self)
