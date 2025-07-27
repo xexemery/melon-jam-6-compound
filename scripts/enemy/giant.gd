@@ -3,7 +3,7 @@ extends EnemyNPC
 
 
 func _init() -> void:
-	attack = 25
-	defend = 20
-	sneak_threshold = 10
+	attack = 15
+	defend = 10
+	sneak_threshold = 8
 	friend_threshold = 5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cdqwq88rmqj4t"]
+[gd_scene load_steps=34 format=4 uid="uid://cdqwq88rmqj4t"]
 
 [ext_resource type="Script" uid="uid://ii3a6tl1lnao" path="res://scripts/game_manager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cxa2samq3vryr" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://igrge3jtyjv1" path="res://scenes/enemy/lady.tscn" id="26_sww3w"]
 [ext_resource type="PackedScene" uid="uid://cco2wkjd8liq" path="res://scenes/enemy/orc.tscn" id="29_wljb1"]
 [ext_resource type="PackedScene" uid="uid://jsxudow70ur" path="res://scenes/enemy/viking.tscn" id="30_v2yb1"]
+[ext_resource type="PackedScene" uid="uid://clnf5b1an6p1b" path="res://scenes/win_zone.tscn" id="31_qouja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -332,7 +333,6 @@ tile_set = SubResource("TileSet_lbhrr")
 
 [node name="SidePanels" parent="." instance=ExtResource("5_vtaks")]
 layer = 10
-visible = false
 
 [node name="EnergyBar" parent="SidePanels" instance=ExtResource("3_lnu2h")]
 unique_name_in_owner = true
@@ -363,7 +363,6 @@ script = ExtResource("9_kvuet")
 [node name="TextBox" parent="." instance=ExtResource("6_0tnpc")]
 unique_name_in_owner = true
 layer = 10
-visible = false
 follow_viewport_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
@@ -673,6 +672,33 @@ position = Vector2(-268, 164)
 [node name="Slime11" parent="Friends" instance=ExtResource("14_ir15t")]
 position = Vector2(-228, -252)
 
+[node name="Crab8" parent="Friends" instance=ExtResource("18_e1j6l")]
+position = Vector2(-220, 52)
+
+[node name="Crab9" parent="Friends" instance=ExtResource("18_e1j6l")]
+position = Vector2(-212, -212)
+
+[node name="Crab10" parent="Friends" instance=ExtResource("18_e1j6l")]
+position = Vector2(244, -252)
+
+[node name="Crab11" parent="Friends" instance=ExtResource("18_e1j6l")]
+position = Vector2(196, 212)
+
+[node name="Crab12" parent="Friends" instance=ExtResource("18_e1j6l")]
+position = Vector2(260, 60)
+
+[node name="Tortoise6" parent="Friends" instance=ExtResource("19_qouja")]
+position = Vector2(108, -252)
+
+[node name="Tortoise7" parent="Friends" instance=ExtResource("19_qouja")]
+position = Vector2(-196, 228)
+
+[node name="Tortoise8" parent="Friends" instance=ExtResource("19_qouja")]
+position = Vector2(-252, -20)
+
+[node name="Octopus3" parent="Friends" instance=ExtResource("18_sgl2t")]
+position = Vector2(-92, -300)
+
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Man1" parent="Enemies" instance=ExtResource("13_trtic")]
@@ -731,3 +757,14 @@ position = Vector2(228, -4)
 
 [node name="Viking2" parent="Enemies" instance=ExtResource("30_v2yb1")]
 position = Vector2(-364, 4)
+
+[node name="WinZones" type="Node" parent="."]
+
+[node name="WinZone" parent="WinZones" instance=ExtResource("31_qouja")]
+position = Vector2(-392, 0)
+
+[node name="WinZone2" parent="WinZones" instance=ExtResource("31_qouja")]
+position = Vector2(368, -72)
+
+[node name="WinZone3" parent="WinZones" instance=ExtResource("31_qouja")]
+position = Vector2(16, -56)

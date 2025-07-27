@@ -51,3 +51,11 @@ func game_over() -> void:
 	# also exit out of combat menu if needed
 	text_box.queue_text("You starved...")
 	text_box.queue_options("Try again", "Quit")
+
+
+func win() -> void:
+	text_box.queue_text("You escaped the compound...")
+	text_box.queue_text("But the creatures you absorbed could not escape you...")
+	text_box.queue_text("Creatures absorbed: ")
+	text_box.queue_text("Creatures consumed: ")
+	text_box.queue_text("You return to the earth... Where you belong.")
