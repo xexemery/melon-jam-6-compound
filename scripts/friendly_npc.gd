@@ -83,5 +83,6 @@ func _on_option_selected(selection: int) -> void:
 		return
 
 	if selection == 0:
+		AudioManager.play_absorb()
 		game_manager.add_to_party(self)
 		get_parent().remove_child(self)

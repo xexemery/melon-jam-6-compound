@@ -4,6 +4,7 @@ extends Node
 @onready var main: AudioStreamPlayer = $Main
 @onready var battle: AudioStreamPlayer = $Battle
 @onready var eat: AudioStreamPlayer = $Eat
+@onready var absorb: AudioStreamPlayer = $Absorb
 
 
 func play_main() -> void:
@@ -18,3 +19,7 @@ func play_battle() -> void:
 
 func play_eat() -> void:
 	eat.play()
+
+
+func play_absorb() -> void:
+	absorb.play()
