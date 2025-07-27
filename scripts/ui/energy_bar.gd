@@ -30,6 +30,7 @@ func _check_energy(energy) -> void:
 	if party_size == 0:
 		game_manager.game_over(true)
 	else:
+		AudioManager.play_eat()
 		_eat_party_member()
 
 

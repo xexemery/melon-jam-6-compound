@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjxftd4dfw7hp"]
+[gd_scene load_steps=5 format=3 uid="uid://bjxftd4dfw7hp"]
 
 [ext_resource type="Script" uid="uid://dvryi5m1xdvx0" path="res://scripts/audio_manager.gd" id="1_3asnw"]
 [ext_resource type="AudioStream" uid="uid://b1ybcylgr7ch1" path="res://assets/music/2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="1_liach"]
 [ext_resource type="AudioStream" uid="uid://c5epaek66jfdr" path="res://assets/music/2021-08-16_-_8_Bit_Adventure_-_www.FesliyanStudios.com.mp3" id="2_3asnw"]
+[ext_resource type="AudioStream" uid="uid://b5id1w0toisdi" path="res://assets/sounds/maximize_006.ogg" id="4_m6ggh"]
 
 [node name="AudioManager" type="Node"]
 process_mode = 3
@@ -15,3 +16,7 @@ volume_db = -6.0
 [node name="Battle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3asnw")
 volume_db = -6.0
+
+[node name="Eat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m6ggh")
+volume_db = 2.0

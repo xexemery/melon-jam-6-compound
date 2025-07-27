@@ -57,6 +57,9 @@ func game_over(starved: bool) -> void:
 	else:
 		text_box.kill_options()
 		text_box.queue_text("You were defeated...")
+
+	text_box.queue_text("Creatures absorbed: " + str(total_creatures))
+	text_box.queue_text("Creatures consumed: " + str(creatures_lost))
 	text_box.queue_text("Try again.")
 
 	await text_box.text_finished

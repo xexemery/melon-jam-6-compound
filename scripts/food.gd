@@ -7,4 +7,5 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		energy_bar.eat_food()
+		AudioManager.play_eat()
 		queue_free()
