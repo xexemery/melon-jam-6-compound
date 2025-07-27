@@ -18,6 +18,7 @@ var attack: int
 var defend: int
 var sneak_threshold: int
 var friend_threshold: int
+var defeated: bool = false
 
 
 func _ready() -> void:
@@ -25,6 +26,9 @@ func _ready() -> void:
 
 
 func interact() -> void:
+	if defeated:
+		return
+
 	text_box.queue_text("Engage enemy?")
 	text_box.queue_options("Yes", "No")
 
@@ -79,6 +83,9 @@ func _handle_attack() -> void:
 
 	if game_manager.party_attack > defend:
 		text_box.queue_text("You defeated the enemy.")
+		get_node("AttackSymbol").hide()
+		defeated = true
+		await text_box.text_finished
 		queue_free()
 	else:
 		text_box.queue_text("You aren't strong enough.")
@@ -92,6 +99,9 @@ func _handle_defend() -> void:
 	if game_manager.party_defend > attack:
 		text_box.queue_text("You defend against the enemy's attack.")
 		text_box.queue_text("They let you pass.")
+		get_node("AttackSymbol").hide()
+		defeated = true
+		await text_box.text_finished
 		player.move_past(global_position)
 	else:
 		text_box.queue_text("You aren't strong enough.")
@@ -109,6 +119,9 @@ func _handle_sneak() -> void:
 
 	if game_manager.party_sneak > sneak_threshold:
 		text_box.queue_text("You sneak past.")
+		get_node("AttackSymbol").hide()
+		defeated = true
+		await text_box.text_finished
 		player.move_past(global_position)
 	else:
 		text_box.queue_text("You couldn't sneak past.")
@@ -122,7 +135,9 @@ func _handle_befriend() -> void:
 	if game_manager.party_friend > friend_threshold:
 		text_box.queue_text("You become friends!")
 		text_box.queue_text("They let you pass.")
-		# wait for text to finish first
+		get_node("AttackSymbol").hide()
+		defeated = true
+		await text_box.text_finished
 		player.move_past(global_position)
 	else:
 		text_box.queue_text("They don't want to be friends.")

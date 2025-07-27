@@ -28,6 +28,7 @@ var options_queue: Array[String] = []
 var current_selection: int = 0
 
 
+signal text_finished()
 signal option_selected(selection: int)
 
 
@@ -83,6 +84,7 @@ func _hide_text_box() -> void:
 	if options_queue.is_empty():
 		text_box_container.hide()
 		get_tree().paused = false
+		text_finished.emit()
 
 
 func _hide_options_box() -> void:
@@ -159,4 +161,6 @@ func _on_option_accept(selection: int) -> void:
 	options_queue = []
 	_change_state(State.READY)
 	option_selected.emit(selection)
-	_hide_options_box()
+
+	if options_queue.is_empty():
+		_hide_options_box()
