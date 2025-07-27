@@ -16,7 +16,7 @@ var current_target: NPC
 
 
 func _ready() -> void:
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.6).timeout
 	text_box.queue_text("Hungry...")
 
 
