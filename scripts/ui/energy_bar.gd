@@ -10,6 +10,7 @@ var index_to_remove: int
 
 
 func _ready() -> void:
+	value = 10
 	value_changed.connect(_check_energy)
 	game_manager.party_size_changed.connect(_update_party_size)
 
@@ -19,7 +20,7 @@ func drain_energy() -> void:
 
 
 func eat_food() -> void:
-	value += 50
+	value += 100
 
 
 func _check_energy(energy) -> void:
@@ -37,6 +38,6 @@ func _update_party_size(length: int) -> void:
 
 
 func _eat_party_member() -> void:
-	value += 50
+	value += 100
 	index_to_remove = randi_range(1, party_size) - 1
 	game_manager.remove_from_party(index_to_remove)
