@@ -40,6 +40,7 @@ func _on_option_selected(selection: int) -> void:
 	match combat_stage:
 		CombatStage.READY:
 			if selection == 0:
+				AudioManager.play_battle()
 				_change_combat_stage(CombatStage.DECISION)
 				text_box.queue_options("Combat", "Other")
 		CombatStage.DECISION:
@@ -79,21 +80,32 @@ func _change_combat_stage(next_stage) -> void:
 func _handle_attack() -> void:
 	if defend < 0:
 		text_box.queue_text("You missed.")
+
+		await text_box.text_finished
+		AudioManager.play_main()
 		return
 
 	if game_manager.party_attack > defend:
 		text_box.queue_text("You defeated the enemy.")
 		get_node("AttackSymbol").hide()
 		defeated = true
+
 		await text_box.text_finished
+		AudioManager.play_main()
 		queue_free()
 	else:
 		text_box.queue_text("You aren't strong enough.")
+
+		await text_box.text_finished
+		AudioManager.play_main()
 
 
 func _handle_defend() -> void:
 	if attack < 0:
 		text_box.queue_text("They won't attack you.")
+
+		await text_box.text_finished
+		AudioManager.play_main()
 		return
 
 	if game_manager.party_defend > attack:
@@ -101,10 +113,16 @@ func _handle_defend() -> void:
 		text_box.queue_text("They let you pass.")
 		get_node("AttackSymbol").hide()
 		defeated = true
+
 		await text_box.text_finished
+		AudioManager.play_main()
 		player.move_past(global_position)
 	else:
 		text_box.queue_text("You couldn't defend against the enemy's attack.")
+
+		await text_box.text_finished
+		AudioManager.play_main()
+
 		if len(game_manager.party) == 0:
 			game_manager.game_over(false)
 		else:
@@ -115,21 +133,32 @@ func _handle_defend() -> void:
 func _handle_sneak() -> void:
 	if sneak_threshold < 0:
 		text_box.queue_text("You can't sneak past them.")
+
+		await text_box.text_finished
+		AudioManager.play_main()
 		return
 
 	if game_manager.party_sneak > sneak_threshold:
 		text_box.queue_text("You sneak past.")
 		get_node("AttackSymbol").hide()
 		defeated = true
+
 		await text_box.text_finished
+		AudioManager.play_main()
 		player.move_past(global_position)
 	else:
 		text_box.queue_text("You couldn't sneak past.")
+
+		await text_box.text_finished
+		AudioManager.play_main()
 
 
 func _handle_befriend() -> void:
 	if friend_threshold < 0:
 		text_box.queue_text("You can't befriend this enemy.")
+
+		await text_box.text_finished
+		AudioManager.play_main()
 		return
 
 	if game_manager.party_friend > friend_threshold:
@@ -137,7 +166,12 @@ func _handle_befriend() -> void:
 		text_box.queue_text("They let you pass.")
 		get_node("AttackSymbol").hide()
 		defeated = true
+
 		await text_box.text_finished
+		AudioManager.play_main()
 		player.move_past(global_position)
 	else:
 		text_box.queue_text("They don't want to be friends.")
+
+		await text_box.text_finished
+		AudioManager.play_main()
