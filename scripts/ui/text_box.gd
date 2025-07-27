@@ -76,6 +76,12 @@ func queue_options(option1, option2) -> void:
 	options_queue.push_back(option2)
 
 
+func kill_options() -> void:
+	options_queue = []
+	_change_state(State.READY)
+	_hide_options_box()
+
+
 func _hide_text_box() -> void:
 	start_symbol.text = ""
 	end_symbol.text = ""

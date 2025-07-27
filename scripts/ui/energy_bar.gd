@@ -28,7 +28,7 @@ func _check_energy(energy) -> void:
 		return
 
 	if party_size == 0:
-		game_manager.game_over()
+		game_manager.game_over(true)
 	else:
 		_eat_party_member()
 

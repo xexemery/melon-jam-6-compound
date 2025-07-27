@@ -104,11 +104,11 @@ func _handle_defend() -> void:
 		await text_box.text_finished
 		player.move_past(global_position)
 	else:
-		text_box.queue_text("You aren't strong enough.")
+		text_box.queue_text("You couldn't defend against the enemy's attack.")
 		if len(game_manager.party) == 0:
-			game_manager.game_over()
+			game_manager.game_over(false)
 		else:
-			var index_to_remove: int = randi_range(0, len(game_manager.party))
+			var index_to_remove: int = randi_range(1, len(game_manager.party)) - 1
 			game_manager.remove_from_party(index_to_remove)
 
 
