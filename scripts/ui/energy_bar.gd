@@ -4,7 +4,7 @@ extends TextureProgressBar
 @onready var game_manager: Node = %GameManager
 @onready var text_box: CanvasLayer = %TextBox
 
-const DRAIN_RATE: int = 1
+const DRAIN_RATE: float = 0.5
 var party_size: int = 0
 var index_to_remove: int
 
