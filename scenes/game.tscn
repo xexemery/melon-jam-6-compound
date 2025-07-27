@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cdqwq88rmqj4t"]
+[gd_scene load_steps=15 format=4 uid="uid://cdqwq88rmqj4t"]
 
 [ext_resource type="Script" uid="uid://ii3a6tl1lnao" path="res://scripts/game_manager.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://cxa2samq3vryr" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -10,18 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cshv1mmutsyrj" path="res://scenes/ui/side_panels.tscn" id="5_vtaks"]
 [ext_resource type="PackedScene" uid="uid://daiyumal65tv3" path="res://scenes/ui/text_box.tscn" id="6_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cqp6lrfhlgfne" path="res://scenes/ui/party_stats.tscn" id="6_vtaks"]
-[ext_resource type="PackedScene" uid="uid://bj6828ugisn5o" path="res://scenes/friendly/crab.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dtj2eb4jmfxto" path="res://scenes/ui/party_list.tscn" id="8_dinhu"]
 [ext_resource type="Script" uid="uid://cf773htnddl3k" path="res://scripts/ui/party_list.gd" id="9_kvuet"]
-[ext_resource type="PackedScene" uid="uid://cncuk03kburvm" path="res://scenes/enemy/ghost.tscn" id="14_ca42v"]
-[ext_resource type="PackedScene" uid="uid://cyvatu8b6rh7r" path="res://scenes/friendly/dog.tscn" id="15_rysoc"]
-[ext_resource type="PackedScene" uid="uid://d4mfkvsbiej8d" path="res://scenes/enemy/man1.tscn" id="16_ssvqc"]
-[ext_resource type="PackedScene" uid="uid://dr81blgm6dwfo" path="res://scenes/enemy/giant.tscn" id="17_264po"]
-[ext_resource type="PackedScene" uid="uid://cgjlsuhb0yl8n" path="res://scenes/enemy/wizard.tscn" id="18_1kice"]
-[ext_resource type="PackedScene" uid="uid://igrge3jtyjv1" path="res://scenes/enemy/lady.tscn" id="19_5newe"]
-[ext_resource type="PackedScene" uid="uid://cdkcaqug5rfdq" path="res://scenes/friendly/slime.tscn" id="20_37s47"]
-[ext_resource type="PackedScene" uid="uid://bor7prnh5fwbk" path="res://scenes/friendly/tortoise.tscn" id="21_bt5mj"]
-[ext_resource type="PackedScene" uid="uid://bok5vyj17av0r" path="res://scenes/friendly/rat.tscn" id="22_e1j6l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("1_yqjtg")
@@ -324,6 +314,7 @@ tile_set = SubResource("TileSet_lbhrr")
 
 [node name="SidePanels" parent="." instance=ExtResource("5_vtaks")]
 layer = 10
+visible = false
 
 [node name="EnergyBar" parent="SidePanels" instance=ExtResource("3_lnu2h")]
 unique_name_in_owner = true
@@ -353,6 +344,7 @@ script = ExtResource("9_kvuet")
 [node name="TextBox" parent="." instance=ExtResource("6_0tnpc")]
 unique_name_in_owner = true
 layer = 10
+visible = false
 follow_viewport_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
@@ -366,36 +358,3 @@ position_smoothing_speed = 12.0
 
 [node name="Food" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(48, -8)
-
-[node name="Crab" parent="." instance=ExtResource("7_u5sy4")]
-position = Vector2(28, -20)
-
-[node name="Ghost" parent="." instance=ExtResource("14_ca42v")]
-position = Vector2(-44, -28)
-
-[node name="Dog" parent="." instance=ExtResource("15_rysoc")]
-position = Vector2(-76, 12)
-
-[node name="Man1" parent="." instance=ExtResource("16_ssvqc")]
-position = Vector2(-20, -52)
-
-[node name="Giant" parent="." instance=ExtResource("17_264po")]
-position = Vector2(-20, 28)
-
-[node name="Wizard" parent="." instance=ExtResource("18_1kice")]
-position = Vector2(-44, 36)
-
-[node name="Lady" parent="." instance=ExtResource("19_5newe")]
-position = Vector2(-28, 52)
-
-[node name="Slime" parent="." instance=ExtResource("20_37s47")]
-position = Vector2(-36, -4)
-
-[node name="Tortoise" parent="." instance=ExtResource("21_bt5mj")]
-position = Vector2(-92, 28)
-
-[node name="Rat" parent="." instance=ExtResource("22_e1j6l")]
-position = Vector2(-60, 4)
-
-[node name="Man2" parent="." instance=ExtResource("16_ssvqc")]
-position = Vector2(-76, 52)
